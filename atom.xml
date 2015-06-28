@@ -4,7 +4,7 @@
   <title><![CDATA[Wackycube]]></title>
   <link href="http://alihelmy.github.io/atom.xml" rel="self"/>
   <link href="http://alihelmy.github.io/"/>
-  <updated>2015-06-28T20:36:30+02:00</updated>
+  <updated>2015-06-28T21:20:34+02:00</updated>
   <id>http://alihelmy.github.io/</id>
   <author>
     <name><![CDATA[Ali 'codemonkey' Helmy]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Camera, Lights]]></title>
+    <link href="http://alihelmy.github.io/blog/camera-lights/"/>
+    <updated>2015-06-28T20:53:45+02:00</updated>
+    <id>http://alihelmy.github.io/blog/camera-lights</id>
+    <content type="html"><![CDATA[<p>After I had a proof of concept done for procedural generation of low poly world assets, I decided it was time to dig in and get the foundation right</p>
+
+<p>The first thing I added, was a random radius calculation. Initially, the radius would scale up everything, leading to very big variations and ‘roughness’ at larger radii, but tiny variations that made the icosahedrons almost smooth at smaller radii. Correcting for that was rather simple; keep the variations as a factor of the radius, giving a consistent looking ‘randomness’ regardless of overall size</p>
+
+<p><img src="../../images/blog/camera_lights/00.png" alt="Varying radii based icosahedron spheres" /></p>
+
+<p>Next up, was the obvious. Looking at the images, it was clear the colours were off. If you look at the bigger sphere there, I am getting almost two shades; one very dark and one very bright, with minimal transition in between. This was disappointing. The colouring on the smaller sphere is what I wanted, and I needed it to be consistent across size</p>
+
+<p>First off in correcting the colours, was the ambient lights. Since I had almost no lights in the scene, I needed to add some ambient light. I set the ambient to a very bright colour, and tried it out</p>
+
+<p><img src="../../images/blog/camera_lights/01.png" alt="Too much ambient lighting" /></p>
+
+<p><img src="../../images/blog/camera_lights/02.png" alt="A bit darker shade of ambient lighting would leave space for additive light in the scene" /></p>
+
+<p>With the ambient lights corrected, I added the rest of the Phong Lighting, sans the specular. However, moving the scene around, I quickly realised my calculations were off. The lights were attached to my camera</p>
+
+<p>The problem was thankfully simple to find and fix. I was multiplying my lights with the camera matrix as well, because I had yet to separate my view / projection / model matrices. Ah well, at least it was easy to spot, and afterwards, I got some half decent results</p>
+
+<p><img src="../../images/blog/camera_lights/03.png" alt="Corrected world lighting" /></p>
+
+<p>Finally, for my own personal testing, I added a switch between this low poly flat shading and a smoothed regular shader. It is best seen with surface normals mapped to RGB values</p>
+
+<p><img src="../../images/blog/camera_lights/04.png" alt="Flat (low poly) normals" /></p>
+
+<p><img src="../../images/blog/camera_lights/05.png" alt="Smoothed normals" /></p>
+
+<p>And with the smoothed normals, if I turned back the regular shading with the original colours, the difference would be very obvious. Needless to say, I’m going to be sticking with the low poly looking flat shading purely because of aesthetics</p>
+
+<p><img src="../../images/blog/camera_lights/06.png" alt="Improperly inflated soccer balls" /></p>
+
+<p>Overall, I am quite happy with the end result for this week (seen below). I still have some problems with the colours, because I have been adding colours in the RGB range using pure vector maths. However, colour theory does not work that way, and I want to switch all my internal colour representations to Hue-Saturation Values, because that is the easier way to add colours to make them ‘brighter’ or ‘darker’ without morphing into a different colour all together</p>
+
+<p><img src="../../images/blog/camera_lights/07.png" alt="The end result for this week" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[flattening]]></title>
@@ -52,7 +93,7 @@
 
 <p>And then, the next step was that I wanted to plug in the icosaherdons to this generator system. Basically following <a href="http://blog.andreaskahler.com/2009/06/creating-icosphere-mesh-in-code.html">Andreas Kahler’s excellent write up</a>; I ported it to C++ / OpenGL and got myself some pretty nice icosahedrons</p>
 
-<p><img src="../../images/blog/flattening/mace.png" alt="Procedurally generated Icosahedron. Use your imaginations, its a low poly tree :p" /></p>
+<p><img src="../../images/blog/flattening/tree_head.png" alt="Procedurally generated Icosahedron. Use your imaginations, its a low poly tree :p" /></p>
 
 <p>Also, adding in the same random vertex modifier as the cubes, we started to get more variation on the ‘tree heads’</p>
 

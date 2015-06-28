@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://alihelmy.github.io/blog/camera-lights/</loc>
+    <lastmod>2015-06-28T20:53:45+02:00</lastmod>
+  </url>
+  <url>
     <loc>http://alihelmy.github.io/blog/flattening/</loc>
     <lastmod>2015-06-21T18:10:33+02:00</lastmod>
   </url>
