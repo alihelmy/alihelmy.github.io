@@ -4,7 +4,7 @@
   <title><![CDATA[Wackycube]]></title>
   <link href="http://alihelmy.github.io/atom.xml" rel="self"/>
   <link href="http://alihelmy.github.io/"/>
-  <updated>2015-06-28T21:20:34+02:00</updated>
+  <updated>2015-06-28T21:34:00+02:00</updated>
   <id>http://alihelmy.github.io/</id>
   <author>
     <name><![CDATA[Ali 'codemonkey' Helmy]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Camera, Lights]]></title>
+    <title type="html"><![CDATA[camera lights]]></title>
     <link href="http://alihelmy.github.io/blog/camera-lights/"/>
     <updated>2015-06-28T20:53:45+02:00</updated>
     <id>http://alihelmy.github.io/blog/camera-lights</id>
