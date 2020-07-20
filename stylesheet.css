@@ -131,20 +131,25 @@ figure[role=code]{font-size:13px;line-height:16px}
 header h1{color:#073642;margin-left:60px}
 ::-moz-selection{background:#839496}
 ::selection{background:#839496}
+
 #main{color:#073642;font-size:18px}
 #main a,#main a:visited{text-decoration:none;color:#ab2b06}
 #main a:hover{color:#eB6B16}
 #main h1{font-size:34px;color:#1d3a9e}
 #main h3{font-size:22px;margin-top:25px;margin-bottom:10px;color:#1d3a9e;text-align:center}
 #main h4{font-size:18px;color:#073642;text-align:center;width:80%;padding:0px 10% 0px 10%}
+
 #main #personal{margin-bottom:20px;margin-top:50px}
 #main #personal img{width:20%}
 #main #personal ul{list-style-type:none}
 #main #personal ul li{margin:10px 0}
+
 #main .social{float:left;width:40%;padding:0px 0px 0px 10%}
 #main .toolbox{float:right;width:40%;text-align:right;padding:0px 10% 0px 0px}
+
+#main #gardening{margin-bottom:20px;text-align:center;width:80%;padding:0px 10% 0px 10%}
+
 #container{margin-top:60px;width:80%;max-width:800px;margin-left:auto;margin-right:auto;font-family:monospace}
-#post #container{margin-top:30px}
 #container strong{color:#859900}
 #container div.image{float:left}
 #container nav{margin-top:10px}
